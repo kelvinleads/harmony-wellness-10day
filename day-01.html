@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harmony Wellness Day 1</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0B140D; --deep:#0F2416; --forest:#196632; --forest-2:#124A25;
+  --bronze:#B16512; --bronze-btn:#9A5710; --bronze-btn-2:#824A0D; --bronze-ink:#8A4C0C; --bronze-lt:#E0A45A; --bronze-pale:#F6D3A4;
+  --brown:#4B2915; --cream:#F5E9D9; --busy:#EBD9C1; --paper:#FBF5EC; --ink:#1C1712; --ink-2:#5A4A3C;
+  --on-dark:#EEF3EC; --on-dark-2:#A9BDAC; --on-forest:#E4EEE6;
+  --line:rgba(75,41,21,.16); --line-dk:rgba(238,243,236,.14);
+  --display:"Familjen Grotesk",system-ui,sans-serif; --body:"Albert Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --gut:clamp(20px,4.5vw,56px); --max:1160px; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--forest) var(--cream)}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--bronze-btn);color:#fff}
+:focus-visible{outline:2px solid var(--bronze-lt);outline-offset:3px;border-radius:3px}
+img{display:block;max-width:100%;height:auto}
+h1,h2{font-family:var(--display);font-weight:700;letter-spacing:-.028em;line-height:1.04;text-wrap:balance}
+h2{font-size:clamp(1.85rem,4.2vw,3rem);max-width:19ch}
+p{text-wrap:pretty}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.todo{color:var(--bronze-ink);border:1px dashed currentColor;border-radius:4px;padding:0 .3em;font-weight:600}
+
+/* the one action */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;background:var(--bronze-btn);color:#fff;font:600 1.0625rem/1.15 var(--body);padding:1.1em 1.55em;border-radius:6px;text-decoration:none;box-shadow:0 1px 0 rgba(0,0,0,.1),0 10px 24px -10px rgba(177,101,18,.8);transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .2s}
+.btn:hover{background:var(--bronze-btn-2);transform:translateY(-1px);box-shadow:0 1px 0 rgba(0,0,0,.1),0 16px 30px -12px rgba(177,101,18,.9)}
+.btn svg{width:20px;height:20px;flex:none;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+
+/* nav with the 10-day rail */
+.nav{position:fixed;inset:0 0 auto;z-index:40;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(251,245,236,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
+.nav .logo{height:26px;width:auto;filter:invert(1);mix-blend-mode:screen;transition:filter .3s}
+.nav.solid .logo{filter:none;mix-blend-mode:multiply}
+.rail{display:flex;align-items:center;gap:12px;font:500 .75rem/1 var(--mono);color:var(--bronze-pale);transition:color .3s}
+.nav.solid .rail{color:var(--brown)}
+.ticks{display:flex;gap:3px}
+.ticks i{display:block;width:14px;height:5px;border-radius:2px;background:rgba(238,243,236,.28)}
+.ticks i.now{background:var(--bronze-lt);width:24px}
+.nav.solid .ticks i{background:var(--busy)}.nav.solid .ticks i.now{background:var(--bronze-btn)}
+
+/* HERO: the hook over the real outlet */
+.hero{position:relative;min-height:min(100svh,880px);display:flex;align-items:flex-end;color:#fff;background:var(--night);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,20,13,.92) 0%,rgba(11,20,13,.72) 42%,rgba(11,20,13,.15) 75%),linear-gradient(0deg,rgba(11,20,13,.75),transparent 45%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:120px;padding-bottom:clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(2.25rem,5.4vw,4.3rem);max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--bronze-lt)}
+.hero .sub{font-size:clamp(1.0625rem,1.6vw,1.25rem);color:#DCE6DE;max-width:44ch;margin-top:20px}
+.hero .cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:20px;border-top:1px solid rgba(238,243,236,.2);font:500 .8125rem/1.4 var(--mono);color:var(--bronze-pale)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--bronze-lt)}
+
+/* sections */
+.sec{padding:clamp(72px,10vw,136px) 0}
+.sec p.lead{font-size:clamp(1.0625rem,1.6vw,1.2rem);line-height:1.7;color:var(--ink-2);max-width:58ch;margin-top:22px}
+.sec p.lead+p.lead{margin-top:14px}
+.punch{font:600 clamp(1.3rem,2.4vw,1.75rem)/1.3 var(--display);letter-spacing:-.015em;color:var(--forest);margin-top:28px;max-width:30ch}
+
+/* recognition: one pay cheque carrying everything */
+.recog{background:var(--cream)}
+.recog-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(36px,6vw,96px);align-items:center}
+.load{background:var(--paper);border-radius:10px;padding:clamp(20px,3vw,30px);box-shadow:0 30px 60px -40px rgba(11,20,13,.5)}
+.load h3{font:500 .75rem/1 var(--mono);color:var(--brown);margin-bottom:14px}
+.load ul{list-style:none;padding:0}
+.load li{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:1rem}
+.load li small{font:500 .6875rem var(--mono);color:var(--ink-2);text-align:right}
+.load .beam{margin-top:18px;display:flex;align-items:center;gap:14px}
+.load .beam b{flex:none;font:700 1rem/1.2 var(--display)}
+.load .beam span{flex:1;height:8px;border-radius:2px;background:var(--forest);position:relative}
+.load .beam span::after{content:"1 pay cheque";position:absolute;right:0;top:14px;font:500 .6875rem var(--mono);color:var(--forest)}
+
+/* shelved dream */
+.dream-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.later{list-style:none;padding:0;font:700 clamp(1.6rem,3.6vw,2.6rem)/1.15 var(--display);letter-spacing:-.03em}
+.later li{color:var(--busy)}
+.later li:nth-child(2){color:#DCC6A8}.later li:nth-child(3){color:#C9AE8C}
+.later li:last-child{color:var(--brown)}
+.later small{display:block;font:500 .75rem var(--mono);color:var(--ink-2);letter-spacing:0;margin-top:14px}
+
+/* stakes: dark */
+.stakes{background:linear-gradient(180deg,var(--night),var(--deep));color:var(--on-dark)}
+.stakes h2{color:#fff}
+.figs{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line-dk)}
+.figs li{padding:26px 26px 6px 0}
+.figs li+li{padding-left:26px;border-left:1px solid var(--line-dk)}
+.figs strong{display:block;font:700 clamp(2.4rem,5vw,3.6rem)/1 var(--display);letter-spacing:-.04em;color:var(--bronze-lt);font-variant-numeric:tabular-nums}
+.figs p{color:var(--on-dark-2);font-size:.98rem;margin-top:12px;max-width:30ch}
+.exit{margin-top:clamp(36px,5vw,56px);padding:clamp(20px,3vw,28px);border-radius:10px;background:rgba(238,243,236,.06);border:1px solid var(--line-dk);font:600 clamp(1.15rem,2vw,1.45rem)/1.4 var(--display);letter-spacing:-.01em;color:#fff;max-width:760px}
+.exit em{font-style:normal;color:var(--bronze-lt)}
+.srcs{font-size:.75rem;color:var(--on-dark-2);margin-top:22px}
+
+/* the turn: real outlet */
+.turn-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(24px,5vw,80px);align-items:end}
+.turn-head p{color:var(--ink-2);font-size:clamp(1.0625rem,1.5vw,1.15rem)}
+.gallery{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:clamp(32px,4vw,48px)}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:8px}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery figure:first-child{grid-row:span 2}
+.gallery figcaption{position:absolute;left:10px;bottom:10px;font:500 .6875rem/1 var(--mono);color:#fff;background:rgba(11,20,13,.7);padding:6px 8px;border-radius:3px}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,32px);margin-top:clamp(28px,4vw,40px);border-top:2px solid var(--bronze)}
+.steps li{padding-top:18px}
+.steps b{display:block;font:600 1.0625rem/1.3 var(--display)}
+.steps span{display:block;font:500 .75rem var(--mono);color:var(--bronze-ink);margin-bottom:6px}
+.steps p{color:var(--ink-2);font-size:.95rem;margin-top:4px}
+
+/* life after: phone */
+.after{background:var(--cream);overflow:hidden}
+.after-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(36px,6vw,96px);align-items:center}
+.phone{justify-self:center;width:min(300px,82vw);aspect-ratio:9/18.5;border-radius:42px;background:linear-gradient(160deg,#1b2a1f,#0B140D 60%);padding:14px;box-shadow:0 0 0 2px #2a3a2e,0 50px 90px -40px rgba(11,20,13,.7);position:relative}
+.screen{height:100%;border-radius:30px;background:radial-gradient(90% 60% at 50% 0%,rgba(224,164,90,.35),transparent 70%),linear-gradient(180deg,#24432d,#0F2416);padding:46px 12px 12px;color:#fff;overflow:hidden;position:relative}
+.screen::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:84px;height:22px;border-radius:12px;background:#000}
+.clock{text-align:center;font:600 3.4rem/1 var(--display);letter-spacing:-.03em}
+.date{text-align:center;font:500 .8125rem var(--body);color:#DCE6DE;margin:6px 0 22px}
+.note{background:rgba(251,245,236,.9);color:var(--ink);border-radius:14px;padding:10px 12px;margin-bottom:8px;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;opacity:0;transform:translateY(-10px)}
+.note .ic{width:28px;height:28px;border-radius:7px;background:var(--forest);display:grid;place-items:center;color:#fff;font:700 .75rem var(--display)}
+.note b{display:flex;justify-content:space-between;font:600 .75rem/1.2 var(--body)}
+.note b small{font-weight:400;color:var(--ink-2)}
+.note p{font-size:.8125rem;line-height:1.35;margin-top:2px}
+.in .note{animation:drop .7s var(--ease) both}
+.in .note:nth-child(2){animation-delay:.9s}.in .note:nth-child(3){animation-delay:1.8s}
+@keyframes drop{to{opacity:1;transform:none}}
+.illus{text-align:center;font:500 .6875rem var(--mono);color:var(--ink-2);margin-top:14px}
+.moments{list-style:none;padding:0;margin-top:28px;border-top:1px solid var(--line)}
+.moments li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.moments span{font:500 .75rem/1.9 var(--mono);color:var(--brown)}
+.moments p{font-size:1.02rem}
+
+/* close */
+.close{background:radial-gradient(60% 80% at 100% 0%,rgba(224,164,90,.18),transparent 60%),var(--forest);color:#fff;text-align:left}
+.close h2{color:#fff;max-width:20ch}
+.close p.lead{color:var(--on-forest)}
+.close .cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:32px}
+.addr{font:500 .8125rem/1.5 var(--mono);color:var(--bronze-pale)}
+.tomorrow{background:var(--night);color:var(--on-dark);padding:clamp(28px,5vw,44px) 0}
+.tomorrow .wrap{display:flex;gap:clamp(16px,4vw,40px);align-items:baseline;flex-wrap:wrap}
+.tomorrow span{font:500 .75rem var(--mono);color:var(--bronze-pale)}
+.tomorrow p{font:600 clamp(1.05rem,2vw,1.3rem)/1.35 var(--display);color:#fff}
+footer{background:var(--night);color:var(--on-dark-2);border-top:1px solid var(--line-dk);padding:22px 0 30px;font-size:.75rem;line-height:1.6}
+
+/* scroll reveal, from visible default */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv:not(.in){opacity:0;transform:translateY(22px)}
+.hero h1,.hero .sub,.hero .cta,.trust{animation:rise .9s var(--ease) both}
+.hero .sub{animation-delay:.08s}.hero .cta{animation-delay:.16s}.trust{animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+
+@media (max-width:900px){
+  .recog-grid,.dream-grid,.turn-head,.after-grid{grid-template-columns:minmax(0,1fr)}
+  .figs{grid-template-columns:minmax(0,1fr)}
+  .figs li,.figs li+li{padding:22px 0;border-left:0;border-bottom:1px solid var(--line-dk)}
+  .dream-grid .later{order:2}
+}
+@media (max-width:640px){
+  body{font-size:1rem}
+  .ticks{display:none}
+  .hero{min-height:92svh}
+  .hero>img{object-position:72% 30%}
+  .hero::after{background:linear-gradient(0deg,rgba(11,20,13,.96) 0%,rgba(11,20,13,.85) 45%,rgba(11,20,13,.25) 80%)}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery figure:first-child{grid-column:span 2;grid-row:auto}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .moments li{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.note{opacity:1;transform:none}.js .rv:not(.in){opacity:1;transform:none}html{scroll-behavior:auto}}
+/* offer reminder block */
+.offer{background:var(--paper)}
+.offer h2{max-width:24ch}
+.offer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:12px;overflow:hidden;margin-top:clamp(28px,4vw,44px);box-shadow:0 30px 60px -40px rgba(11,20,13,.55)}
+.offer-grid>div{padding:clamp(22px,3vw,34px)}
+.offer-grid h3{font:500 .75rem/1 var(--mono);margin-bottom:12px}
+.offer-grid ul{list-style:none;padding:0}
+.offer-grid li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:1rem}
+.offer-grid svg{width:20px;height:20px;margin-top:3px}
+.offer-grid .get{background:var(--cream)}
+.offer-grid .get h3{color:var(--brown)}.offer-grid .get svg{color:var(--forest)}
+.offer-grid .get .price{font:700 clamp(2rem,4vw,2.8rem)/1 var(--display);letter-spacing:-.03em;color:var(--forest);margin-bottom:14px}
+.offer-grid .never{background:linear-gradient(160deg,var(--forest),var(--forest-2) 55%,var(--night));color:var(--on-dark)}
+.offer-grid .never h3{color:var(--bronze-pale)}
+.offer-grid .never li{border-color:var(--line-dk);color:var(--on-forest)}
+.offer-grid .never svg{color:var(--bronze-lt)}
+.offer-grid .never s{text-decoration-color:var(--bronze-lt);text-decoration-thickness:2px}
+.offer-grid .keep{margin-top:16px;font:600 1.15rem/1.35 var(--display);color:#fff}
+.srcs{font-size:.75rem}
+.todo{color:var(--bronze-ink);border:1px dashed currentColor;border-radius:4px;padding:0 .3em;font-weight:600}
+@media (max-width:900px){.offer-grid{grid-template-columns:minmax(0,1fr)}}
+/* USP band */
+.usp{background:linear-gradient(160deg,var(--forest-2),var(--night) 75%);color:var(--on-dark);padding:clamp(56px,8vw,104px) 0}
+.usp-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(20px,5vw,72px);align-items:end}
+.usp h2{color:#fff;max-width:20ch}
+.usp-head p{color:var(--on-dark-2);font-size:clamp(1.05rem,1.5vw,1.15rem)}
+.pillars{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,.8fr);gap:0;margin-top:clamp(28px,4vw,44px);border-top:1px solid var(--line-dk)}
+.pillars li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:22px 22px 6px 0}
+.pillars li+li{padding-left:22px;border-left:1px solid var(--line-dk)}
+.pillars svg{width:20px;height:20px;color:var(--bronze-lt);margin-top:3px}
+.pillars b{display:block;font:600 1.1rem/1.3 var(--display);color:#fff}
+.pillars p{color:var(--on-dark-2);font-size:.95rem;margin-top:4px}
+.pillars .price{display:block}
+.pillars .price span{display:block;font:500 .75rem var(--mono);color:var(--bronze-pale)}
+.pillars .price b{font:700 clamp(1.8rem,3vw,2.3rem)/1.1 var(--display);letter-spacing:-.03em;color:var(--bronze-lt);margin-top:4px}
+@media (max-width:900px){.usp-head{grid-template-columns:minmax(0,1fr)}.pillars{grid-template-columns:minmax(0,1fr)}.pillars li,.pillars li+li{padding:18px 0;border-left:0;border-bottom:1px solid var(--line-dk)}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav"><div class="wrap">
+<img class="logo" src="logo.png" alt="Harmony Wellness" width="166" height="49">
+<div class="rail">DAY 01 / 10<span class="ticks" aria-hidden="true"><i class="now"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+</div></header>
+
+<main>
+<section class="hero">
+<img src="img/storefront.jpg" alt="The Harmony Wellness outlet at 468 River Valley Road" width="800" height="450" fetchpriority="high">
+<div class="wrap">
+<h1>Own a Fully Automated Wellness Business From <em>S$38,000</em>, Without Managing It</h1>
+<p class="sub">No staff to hire. No daily operations. No customers to chase. You keep your day job, and your evenings.</p>
+<div class="cta"><a class="btn" href="#book">Book My Free Discovery Session<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div>
+<div class="trust"><span>From S$38,000</span><span>No staff · No daily operations</span><span>Open at 468 River Valley Rd</span></div>
+</div>
+</section>
+
+<section class="sec recog"><div class="wrap recog-grid">
+<div class="rv">
+<h2>You're Doing Everything Right. So Why Does It Still Feel Fragile?</h2>
+<p class="lead">Good job. CPF growing. Maybe a flat that's almost paid off. And yet some nights you lie awake doing the maths: the children's university fees, your parents' next hospital bill, how many more years of this before you can slow down.</p>
+<p class="punch">Everything rests on one pay cheque, from one company, decided in meetings you're not invited to.</p>
+</div>
+<div class="load rv" aria-label="Everything resting on one salary">
+<h3>WHAT YOUR SALARY CARRIES</h3>
+<ul>
+<li>Children's university fees<small>NEXT FEW YEARS</small></li>
+<li>Parents' medical bills<small>ANY TIME</small></li>
+<li>Housing loan<small>EVERY MONTH</small></li>
+<li>Your own retirement<small>SOMEDAY</small></li>
+</ul>
+<div class="beam"><b>Held up by</b><span></span></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap dream-grid">
+<ol class="later rv" aria-label="The business you keep postponing">
+<li>Next year.</li><li>After the promotion.</li><li>When the kids are older.</li><li>Later.</li>
+<small>THE BUSINESS YOU KEEP POSTPONING</small>
+</ol>
+<div class="rv">
+<h2>You've Thought About Starting Something of Your Own. More Than Once.</h2>
+<p class="lead">But every business you looked at wanted the one thing you couldn't give: your time. Weekends behind a counter. Staff calling in sick. Your phone ringing during your child's school concert.</p>
+<p class="lead">Maybe you watched a friend pour their savings into a café, only to close it not long after. So you told yourself "later".</p>
+<p class="punch">And later keeps moving.</p>
+</div>
+</div></section>
+
+<section class="sec stakes"><div class="wrap">
+<h2 class="rv">Waiting Has a Cost, Even if You Can't See It Yet</h2>
+<ul class="figs rv">
+<li><strong>1 in 5</strong><p>retrenched PMETs had still not found work two years later.</p></li>
+<li><strong>&minus;25%</strong><p>median pay cut for re-employed PMETs who ended up earning less than before.</p></li>
+<li><strong>4,620</strong><p>workers retrenched in Q2 2026 alone, about 3 in 4 due to business restructuring.</p></li>
+</ul>
+<p class="exit rv">You don't need to panic, and you don't need to quit. <em>You need a second source of income that doesn't depend on your boss.</em></p>
+<p class="srcs">Source: Ministry of Manpower, oral answer to parliamentary questions on retrenchment, 6 October 2026.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="turn-head rv">
+<h2>Harmony Wellness Is the Business That Doesn't Ask for Your Evenings</h2>
+<p>A Far Infrared wellness outlet built from day one to run without its owner. Nobody needs to stand behind a counter, least of all you.</p>
+</div>
+<div class="gallery rv">
+<figure><img src="img/lounge.jpg" alt="The Harmony Wellness lounge" loading="lazy"><figcaption>THE LOUNGE</figcaption></figure>
+<figure><img src="img/entrance.jpg" alt="Member letting herself in" loading="lazy"><figcaption>FACE-RECOGNITION ENTRY</figcaption></figure>
+<figure><img src="img/door-panel.jpg" alt="Private room door with control panel" loading="lazy"><figcaption>PRIVATE ROOMS</figcaption></figure>
+<figure><img src="img/room-phone.jpg" alt="Member using her phone inside a room" loading="lazy"><figcaption>BOOKED ON THEIR PHONE</figcaption></figure>
+<figure><img src="img/corridor.jpg" alt="Corridor of private rooms" loading="lazy"><figcaption>NO RECEPTION DESK</figcaption></figure>
+</div>
+<ol class="steps rv">
+<li><span>01</span><b>Members book on their phone</b><p>Day or night, without calling anyone.</p></li>
+<li><span>02</span><b>They let themselves in</b><p>Face recognition at the door. No receptionist.</p></li>
+<li><span>03</span><b>They relax in a private room</b><p>Then leave. Nobody had to be there.</p></li>
+</ol>
+</div></section>
+
+<section class="sec after"><div class="wrap after-grid">
+<div class="rv">
+<h2>Picture This Tuesday</h2>
+<p class="lead">3pm, another meeting that should have been an email. Your phone buzzes: <strong>"New booking, Room 2, 6:30pm."</strong></p>
+<ul class="moments">
+<li><span>TUE 15:02</span><p>In a meeting. A booking comes in.</p></li>
+<li><span>SAT 11:20</span><p>At the zoo with your kids. Another one.</p></li>
+<li><span>SUN 21:40</span><p>On the sofa. Tomorrow is already filling up.</p></li>
+</ul>
+<p class="punch">You didn't open the shop or call anyone in. For the first time, something is working for you while you're living your life.</p>
+</div>
+<div class="rv" id="phoneWrap">
+<div class="phone"><div class="screen">
+<div class="clock">15:02</div><div class="date">Tuesday</div>
+<div class="note"><span class="ic">HW</span><div><b>Harmony Wellness <small>now</small></b><p>New booking · Room 2 · 6:30pm</p></div></div>
+<div class="note"><span class="ic">HW</span><div><b>Harmony Wellness <small>2m</small></b><p>New booking · Room 4 · 7:15pm</p></div></div>
+<div class="note"><span class="ic">HW</span><div><b>Harmony Wellness <small>9m</small></b><p>New booking · Room 1 · 8:00pm</p></div></div>
+</div></div>
+<p class="illus">ILLUSTRATION</p>
+</div>
+</div></section>
+
+<section class="usp"><div class="wrap"><div class="usp-head rv"><h2>A Business That Runs Without You</h2><p>No staff to manage, no shop to open, no customers to chase. You keep your job and your evenings, and the outlet keeps taking bookings.</p></div><ul class="pillars rv"><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><div><b>No staff</b><p>Members use the private rooms on their own.</p></div></li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><div><b>No daily operations</b><p>Bookings, access, cleaning and repairs are handled for you.</p></div></li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><div><b>No chasing customers</b><p>Marketing is run centrally to bring members in.</p></div></li><li class="price"><span>FROM</span><b>S$38,000</b><p>You keep your day job.</p></li></ul></div></section>
+<section class="sec close" id="book"><div class="wrap rv">
+<h2>It's Real, and It's Open at 468 River Valley Road</h2>
+<p class="lead">See it for yourself before you decide anything. Try a room, meet the founders and ask every hard question you have.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/6589863688?text=Hi%2C%20I'd%20like%20to%20book%20a%20free%20discovery%20session%20at%20Harmony%20Wellness." target="_blank" rel="noopener">Book My Free Discovery Session<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+<span class="addr">FREE · NO OBLIGATION<br>NOBODY SIGNS ON THE DAY</span>
+</div>
+</div></section>
+</main>
+
+<aside class="tomorrow"><div class="wrap"><span>TOMORROW ON WHATSAPP</span><p>Watch a real visit, and see why members keep coming back on their own.</p></div></aside>
+<footer><div class="wrap">Harmony Wellness · Han6 Wellness Tech Pte Ltd · 468 River Valley Road, Singapore 248353. A business opportunity, not a financial product.</div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var nav=document.getElementById('nav'),hero=document.querySelector('.hero');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>hero.offsetHeight-70);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.18});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
