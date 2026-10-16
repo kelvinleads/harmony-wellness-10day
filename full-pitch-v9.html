@@ -612,6 +612,22 @@ main .big{max-width:40ch}
 main .whys p,main .growth figcaption,main .future p{max-width:none}
 
 @media (min-width:640px) and (max-width:820px){main .role{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;gap:28px}main .role .phone{width:min(240px,100%)}}
+
+/* readability + less template-y details */
+main mark{background:linear-gradient(transparent 58%,rgba(224,164,90,.38) 58%);color:inherit;padding:0 .08em}
+.dark main mark,.dark mark{background:linear-gradient(transparent 58%,rgba(224,164,90,.32) 58%)}
+main .lead strong,main p strong{color:var(--ink);font-weight:600}
+.dark p strong,.after p strong{color:inherit}
+.sn{display:block;font:600 clamp(.95rem,1.4vw,1.1rem)/1 var(--body);color:var(--bronze-ink);letter-spacing:0;margin-bottom:12px}
+.dark .sn{color:var(--bronze-lt)}
+figure.photo figcaption{font:500 .78rem/1.3 var(--body)!important;letter-spacing:0!important;text-transform:none!important;background:rgba(11,20,13,.72);padding:7px 10px;border-radius:4px}
+.ba .was span,.ba .now span{font:500 .8rem var(--body)!important;letter-spacing:0!important;text-transform:none!important}
+.load h3{font:600 1rem var(--display)!important;letter-spacing:0!important;text-transform:none!important}
+.lead{line-height:1.7}
+main .sec h2{font-size:clamp(2rem,4.2vw,3.3rem);line-height:1.06;letter-spacing:-.03em}
+.photo{border-radius:14px}
+.photo img{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}.photo:hover img{transform:scale(1.03)}
+::selection{background:rgba(25,102,50,.18)}
 </style>
 </head>
 <body>
@@ -629,9 +645,9 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <section class="sec"><div class="wrap">
 <h2 class="rv">Most Franchise Owners Don't Own a Business. They Own a Job They Can't Quit.</h2>
 <div class="beat" style="margin-top:36px">
-<div class="rv"><p class="lead">At some point you've told yourself: one day I'll own something of my own. Not to escape your career, but to have something that's yours and grows while you're busy with everything else. After twenty years of hard work, you finally have the capital to start: S$50,000, maybe more, set aside and waiting for the right business.</p>
-<p class="lead">But every business you've looked at comes with a catch. The bubble tea kiosk needs staff on every shift. The tuition centre needs someone at the door every evening. Even a "passive" laundromat needs someone to take the call when a machine breaks.</p></div>
-<div class="load rv"><h3>WHAT A TYPICAL FRANCHISE NEEDS FROM YOU</h3><ul>
+<div class="rv"><p class="lead">At some point you've told yourself: <mark>one day I'll own something of my own</mark>. Not to escape your career, but to have something that's yours and grows while you're busy with everything else. After twenty years of hard work, <strong>you finally have the capital to start</strong>: S$50,000, maybe more, set aside and waiting for the right business.</p>
+<p class="lead">But <strong>every business you've looked at comes with a catch</strong>. The bubble tea kiosk needs staff on every shift. The tuition centre needs someone at the door every evening. Even a "passive" laundromat needs someone to take the call when a machine breaks.</p></div>
+<div class="load rv"><h3>What a typical franchise needs from you</h3><ul>
 <li>Staff to hire and replace<small>ALL YEAR</small></li>
 <li>A shop to open and close<small>EVERY DAY</small></li>
 <li>Customers to bring in<small>EVERY MONTH</small></li>
@@ -644,13 +660,13 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <section class="sec after"><div class="wrap"><h2 class="rv">While You're at Work, Your Outlet Is Open for Business</h2></div>
 <div class="wrap role" style="margin-top:32px">
 <div class="rv">
-<p class="lead">Picture a Tuesday afternoon. You're in a meeting that should have been an email. Your phone lights up: a member has just booked a room at your outlet and paid for it. Nobody served them, nobody let them in, and your business still made money.</p>
+<p class="lead">Picture a Tuesday afternoon. You're in a meeting that should have been an email. <mark>Your phone lights up: a member has just booked a room at your outlet and paid for it.</mark> Nobody served them, nobody let them in, and <strong>your business still made money</strong>.</p>
 <ul class="moments">
 <li><span>TUE 15:02</span><p>In a meeting. A booking comes in.</p></li>
 <li><span>SAT 11:20</span><p>Out with the family. Another one.</p></li>
 <li><span>SUN 21:40</span><p>On the sofa. Tomorrow is already filling up.</p></li>
 </ul>
-<p class="lead" style="margin-top:28px">You don't need to have run a business before. The hard parts (hiring, rosters, cleaning, marketing and member support) are designed out or handled for you. What's left is the satisfying part of owning a business: a glance at your phone when a booking comes in, and a monthly summary of how your outlet did. That's about <span class="todo">X</span> hours a month, none of it during office hours.</p></div>
+<p class="lead" style="margin-top:28px"><strong>You don't need to have run a business before.</strong> The hard parts (hiring, rosters, cleaning, marketing and member support) are designed out or handled for you. What's left is the satisfying part of owning a business: a glance at your phone when a booking comes in, and a monthly summary of how your outlet did. That's <strong>about <span class="todo">X</span> hours a month</strong>, none of it during office hours.</p></div>
 <div class="rv" id="phoneWrap">
 <div class="phone"><div class="screen">
 <div class="clock">15:02</div><div class="date">Tuesday</div>
@@ -666,31 +682,31 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <h2 class="rv">Kenny Ran the Hard Version of This Business for Years. He Built This One So You Never Have To.</h2>
 <div class="beat" style="margin-top:36px">
 <div class="ph rv"><div><b>Photo: Kenny Tham and Summer at the outlet</b><small>Real photo needed from the client.</small></div></div>
-<div class="rv"><p class="lead">Before Harmony Wellness, our co-founder Kenny Tham grew a hair care chain to <span class="todo">30–40</span> outlets. From the outside it looked like the dream. From the inside it was rosters, resignations and a phone that never stopped, because every outlet needed him. <span class="todo">Kenny to add one real moment from those years</span></p></div>
+<div class="rv"><p class="lead">Before Harmony Wellness, our co-founder Kenny Tham grew a hair care chain to <span class="todo">30–40</span> outlets. From the outside it looked like the dream. <mark>From the inside it was rosters, resignations and a phone that never stopped</mark>, because every outlet needed him. <span class="todo">Kenny to add one real moment from those years</span></p></div>
 </div>
 <div class="quote rv" style="max-width:760px;margin:clamp(48px,7vw,80px) auto 0"><p><span class="todo">A line from Kenny in his own words, e.g. why he wanted owners to have their time back</span></p><cite>KENNY THAM, CO-FOUNDER</cite></div>
 <div class="beat rev">
-<figure class="photo rv"><img src="img/entrance.jpg" alt="Entrance of Harmony Wellness River Valley" loading="lazy"><figcaption>RIVER VALLEY · OPEN SINCE 8 MAY 2026</figcaption></figure>
-<div class="rv"><p class="lead">So with co-founder Summer Zhao <span class="todo">confirm spelling; add Summer's own story</span>, he designed a business from scratch around one rule: it must never need its owner to stand in it. No counter, no shifts, no owner on call. Harmony Wellness is that business, and River Valley has run that way since the day it opened.</p>
-<p class="lead">You won't be doing this alone. The Harmony Wellness team runs marketing, cleaning, repairs and member support for every outlet, and Kenny and Summer host every discovery session themselves.</p></div>
+<figure class="photo rv"><img src="img/entrance.jpg" alt="Entrance of Harmony Wellness River Valley" loading="lazy"><figcaption>River Valley · open since 8 May 2026</figcaption></figure>
+<div class="rv"><p class="lead">So with co-founder Summer Zhao <span class="todo">add Summer's own story</span>, he designed a business from scratch around one rule: <mark>it must never need its owner to stand in it</mark>. No counter, no shifts, no owner on call. Harmony Wellness is that business, and River Valley has run that way since the day it opened.</p>
+<p class="lead"><strong>You won't be doing this alone.</strong> The Harmony Wellness team runs marketing, cleaning, repairs and member support for every outlet, and Kenny and Summer host every discovery session themselves.</p></div>
 </div>
 </div></section>
 <!-- 5 BRIDGE: THE 3 SUCCESSES -->
 <section class="sec dark bigidea"><div class="wrap">
 <div class="turn-head rv"><h2>3 Reasons Harmony Wellness Outlets Succeed Without Their Owner</h2><p>Every business that needs its owner needs them for the same three things: serving customers, finding customers and keeping customers. Kenny designed Harmony Wellness to solve all three without you.</p></div>
 <ul class="ba rv">
-<li><div class="was"><span>A TYPICAL OUTLET</span><s>A team on every shift, and the scramble when one quits</s></div><div class="now"><span>SUCCESS #1</span><b>It runs itself, with zero staff</b><p>Members book, enter and use their room on their own.</p></div></li>
-<li><div class="was"><span>A TYPICAL OUTLET</span><s>Flyers, promotions and slow months</s></div><div class="now"><span>SUCCESS #2</span><b>It brings in its own customers</b><p>A central team runs the ads and follows up every enquiry.</p></div></li>
-<li><div class="was"><span>A TYPICAL OUTLET</span><s>New customers needed every single day</s></div><div class="now"><span>SUCCESS #3</span><b>The wellness habit keeps members coming back</b><p>Trial, then packages, then a monthly membership.</p></div></li>
+<li><div class="was"><span>In a typical outlet</span><s>A team on every shift, and the scramble when one quits</s></div><div class="now"><span>Harmony Wellness · Success #1</span><b>It runs itself, with zero staff</b><p>Members book, enter and use their room on their own.</p></div></li>
+<li><div class="was"><span>In a typical outlet</span><s>Flyers, promotions and slow months</s></div><div class="now"><span>Harmony Wellness · Success #2</span><b>It brings in its own customers</b><p>A central team runs the ads and follows up every enquiry.</p></div></li>
+<li><div class="was"><span>In a typical outlet</span><s>New customers needed every single day</s></div><div class="now"><span>Harmony Wellness · Success #3</span><b>The wellness habit keeps members coming back</b><p>Trial, then packages, then a monthly membership.</p></div></li>
 </ul></div></section>
 
 <!-- 6 SUCCESS #1  [Day 3, form]  objection: "must I be there?" -->
 <section class="sec"><div class="wrap">
-<div class="turn-head rv"><h2>Success #1: The Business That Runs Itself, With Zero Staff</h2>
-<p>Imagine owning a shop where nobody ever calls in sick, asks for a raise or hands in a resignation letter. That's what zero staff means. There's no counter to stand behind, because members serve themselves from start to finish. Watch a real visit at River Valley.</p></div>
+<div class="turn-head rv"><h2><span class="sn">Success #1</span> The Business That Runs Itself, With Zero Staff</h2>
+<p>Imagine owning a shop where <mark>nobody ever calls in sick, asks for a raise or hands in a resignation letter</mark>. That's what zero staff means. There's no counter to stand behind, because members serve themselves from start to finish. Watch a real visit at River Valley.</p></div>
 <div class="split" style="margin-top:32px">
 <a class="vfac rv" href="https://www.youtube.com/watch?v=AT2f5USNowM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AT2f5USNowM/maxresdefault.jpg" alt="A real member visit at Harmony Wellness" loading="lazy"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span></a>
-<div class="rv prose"><p class="lead">For most owners, staff are the biggest cost and the biggest worry. Here, both are gone: no salaries or CPF, no rosters and no 7am calls about who's covering today.</p>
+<div class="rv prose"><p class="lead">For most owners, <strong>staff are the biggest cost and the biggest worry. Here, both are gone</strong>: no salaries or CPF, no rosters and no 7am calls about who's covering today.</p>
 <p class="punch" style="margin-top:20px">The outlet keeps working whether you're at your desk, on holiday or asleep.</p></div>
 </div>
 <ol class="day rv">
@@ -701,18 +717,18 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 </ol>
 <p class="illus-note">ILLUSTRATIVE DAY. <span class="todo">Kenny to confirm cleaning and maintenance schedule</span></p>
 <div class="pair rv" style="margin-top:40px">
-<figure class="photo"><img src="img/door-panel.jpg" alt="Face recognition panel at the door" loading="lazy"><figcaption>FACE-RECOGNITION ENTRY</figcaption></figure>
-<figure class="photo"><img src="img/room-phone.jpg" alt="Member using the booking app in the room" loading="lazy"><figcaption>BOOKED ON THE PHONE</figcaption></figure>
+<figure class="photo"><img src="img/door-panel.jpg" alt="Face recognition panel at the door" loading="lazy"><figcaption>Face-recognition entry</figcaption></figure>
+<figure class="photo"><img src="img/room-phone.jpg" alt="Member using the booking app in the room" loading="lazy"><figcaption>Booked on the phone</figcaption></figure>
 </div>
 </div></section>
 
 <!-- 7 SUCCESS #2  [Day 4]  objection: "where will the customers come from?" -->
 <section class="sec tint"><div class="wrap">
-<div class="turn-head rv"><h2>Success #2: The Hands-Off Business That Brings In Its Own Customers</h2>
-<p>Most shops don't fail because of the product. They fail because not enough people walk in, and in a typical franchise, filling the shop is your job.</p></div>
+<div class="turn-head rv"><h2><span class="sn">Success #2</span> The Hands-Off Business That Brings In Its Own Customers</h2>
+<p>Most shops don't fail because of the product. <mark>They fail because not enough people walk in</mark>, and in a typical franchise, filling the shop is your job.</p></div>
 <div class="beat">
-<figure class="photo tall rv"><img src="img/lounge.jpg" alt="The members' lounge at Harmony Wellness River Valley" loading="lazy"><figcaption>MEMBERS' LOUNGE · RIVER VALLEY</figcaption></figure>
-<div class="rv"><p class="lead">At Harmony Wellness, that job belongs to one of Harmony Wellness's founding partners, who runs the ads for every outlet as his full-time work. <span class="todo">name and agency: Nic to confirm</span> You don't need to know anything about advertising. Here's how a stranger becomes your member:</p>
+<figure class="photo tall rv"><img src="img/lounge.jpg" alt="The members' lounge at Harmony Wellness River Valley" loading="lazy"><figcaption>Members' lounge · River Valley</figcaption></figure>
+<div class="rv"><p class="lead">At Harmony Wellness, that job belongs to one of Harmony Wellness's founding partners, who runs the ads for every outlet as his full-time work. <span class="todo">name and agency: Nic to confirm</span> <strong>You don't need to know anything about advertising.</strong> Here's how a stranger becomes your member:</p>
 <ol class="path">
 <li><span>THE AD</span><div><b>Someone sees Harmony Wellness online</b><p>Ads are run by a founding partner whose business is advertising.</p></div></li>
 <li><span>WHATSAPP</span><div><b>They enquire and get followed up</b><p>The team answers and follows up until they book.</p></div></li>
@@ -721,21 +737,21 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 </ol></div>
 </div>
 <div class="beat rev">
-<figure class="photo rv"><img src="img/storefront.jpg" alt="The Harmony Wellness shopfront at River Valley" loading="lazy"><figcaption>WHERE NEW MEMBERS ARRIVE</figcaption></figure>
+<figure class="photo rv"><img src="img/storefront.jpg" alt="The Harmony Wellness shopfront at River Valley" loading="lazy"><figcaption>Where new members arrive</figcaption></figure>
 <div class="rv"><p class="lead">Why does this work better than doing it yourself? Someone who runs ads every day, for every outlet, and has a stake in the brand learns what brings people in far faster than one owner experimenting with flyers ever could.</p>
-<p class="lead">And because every enquiry is followed up on WhatsApp straight away, interest doesn't go cold while you're stuck in a meeting. The people who show up at your outlet arrive already booked.</p></div>
+<p class="lead">And because every enquiry is followed up on WhatsApp straight away, interest doesn't go cold while you're stuck in a meeting. <strong>The people who show up at your outlet arrive already booked.</strong></p></div>
 </div>
 </div></section>
 <!-- 8 SUCCESS #3  [Day 5]  objection: "will anyone keep coming back?" -->
 <section class="sec"><div class="wrap">
-<h2 class="rv">Success #3: The Wellness Habit That Keeps Members Coming Back</h2>
+<h2 class="rv"><span class="sn">Success #3</span> The Wellness Habit That Keeps Members Coming Back</h2>
 <div class="beat rev" style="margin-top:36px">
-<figure class="photo tall rv"><img src="img/room.jpg" alt="A private Far Infrared room at Harmony Wellness" loading="lazy"><figcaption>PRIVATE ROOM</figcaption></figure>
-<div class="rv"><p class="lead">The businesses that last are the ones with regulars. A café lives on the people who come every morning, not the ones who visit once for a photo. Harmony Wellness is built the same way, because once looking after yourself becomes part of someone's week, it stays there.</p></div>
+<figure class="photo tall rv"><img src="img/room.jpg" alt="A private Far Infrared room at Harmony Wellness" loading="lazy"><figcaption>Private room</figcaption></figure>
+<div class="rv"><p class="lead"><mark>The businesses that last are the ones with regulars.</mark> A café lives on the people who come every morning, not the ones who visit once for a photo. Harmony Wellness is built the same way, because once looking after yourself becomes part of someone's week, it stays there.</p></div>
 </div>
 <ol class="ladder rv" style="margin-top:56px"><li><b>Trial</b><small>Their first visit</small></li><li><b>4 sessions</b><small>Fitting it into the week</small></li><li><b>12 sessions</b><small>It's a routine</small></li><li><b>Monthly</b><small>A regular member</small></li></ol>
 <p class="big rv">Booking takes seconds, the room is private and there's no schedule to fit around. So members keep coming, and your outlet is <em>filled by regulars</em>.</p>
-<p class="lead rv" style="max-width:62ch;margin:28px auto 0;text-align:center">Each step up the ladder means the same people returning more often, and steadier bookings you can see on your phone. Kenny learned the value of regulars across years of running a chain, and built the whole model around them.</p>
+<p class="lead rv" style="max-width:62ch;margin:28px auto 0;text-align:center">Each step up the ladder means the same people returning more often, and <strong>steadier bookings you can see on your phone</strong>. Kenny learned the value of regulars across years of running a chain, and built the whole model around them.</p>
 </div></section>
 <section class="ctamid"><div class="wrap rv"><h2>See All Three Working for Yourself</h2><p>Try a room at River Valley, free, and watch an outlet run with nobody behind the counter.</p><a class="btn" href="#book">Book My Free Discovery Session<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div></section>
 
@@ -745,11 +761,11 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <p>If you're going to own a business, own one in a market that keeps growing, with a model that doesn't need you inside it. Wellness in Singapore is that market.</p></div>
 <div class="why rv">
 <figure class="growth"><div class="gb"><div><b>US$15B</b><i style="height:52%"></i><span>2021</span></div><div><b>US$23.2B</b><i style="height:80%"></i><span>2024</span></div></div>
-<figcaption>Singapore's wellness economy grew by more than half in three years, and Singaporeans spend over 8&times; the Asian average on wellness per person. You'd be opening in a market where people already spend, not one you have to convince.</figcaption></figure>
+<figcaption>Singapore's wellness economy grew by more than half in three years, and Singaporeans spend over 8&times; the Asian average on wellness per person. <strong>You'd be opening in a market where people already spend, not one you have to convince.</strong></figcaption></figure>
 <ul class="whys">
-<li><b>A customer base that keeps growing</b><p>More than 1 in 5 Singapore citizens are 65 or older today, and by 2035 it will be more than 1 in 4. Many people start paying closer attention to their wellbeing in their 40s too, so the people walking into your outlet are a lot like you. You'll understand exactly why they come.</p></li>
-<li><b>A routine, not a fad</b><p>A food concept can be the talk of the town one year and gone the next. Wellness is something people build into their week, so the members your outlet wins this year are still booking next year.</p></li>
-<li><b>Lean by design</b><p>Most outlets struggle because of what they cost before a single customer walks in: salaries, a big shopfront and their own advertising. Harmony Wellness has none of those, so less has to go right before your outlet starts earning.</p></li>
+<li><b>A customer base that keeps growing</b><p>More than 1 in 5 Singapore citizens are 65 or older today, and by 2035 it will be more than 1 in 4. Many people start paying closer attention to their wellbeing in their 40s too, so <strong>the people walking into your outlet are a lot like you</strong>. You'll understand exactly why they come.</p></li>
+<li><b>A routine, not a fad</b><p>A food concept can be the talk of the town one year and gone the next. Wellness is something people build into their week, so the members your outlet wins this year are <strong>still booking next year</strong>.</p></li>
+<li><b>Lean by design</b><p>Most outlets struggle because of what they cost before a single customer walks in: salaries, a big shopfront and their own advertising. Harmony Wellness has none of those, so <strong>less has to go right before your outlet starts earning</strong>.</p></li>
 </ul></div>
 <h3 class="subh rv" style="margin-top:72px">How it compares with other businesses you could buy into</h3>
 <div class="cmp-wrap rv"><table class="cmp">
@@ -766,7 +782,7 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <!-- 10 THE NUMBERS  [Day 7, form]  objection: "S$38K is a lot / will I see my money back?" -->
 <section class="sec"><div class="wrap">
 <div class="turn-head rv"><h2>What S$38,000 Gets You</h2>
-<p>For a business of your own, that's a modest entry price, and every dollar goes into something you own. Here's exactly what it covers.</p></div>
+<p>For a business of your own, that's a modest entry price, and <strong>every dollar goes into something you own</strong>. Here's exactly what it covers.</p></div>
 <ul class="incl incl2 rv">
 <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>Your own Far Infrared equipment</b>, owned outright. <span class="todo">no. of chambers</span></span></li>
 <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>A complete outlet setup:</b> fit-out, booking system and face-recognition entry.</span></li>
@@ -780,7 +796,7 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <ul class="bars"><li><div class="lab"><b>Self-service laundromat</b><span>S$135K–200K+</span></div><div class="bar"><i style="width:100%"></i></div></li><li class="us"><div class="lab"><b>Harmony Wellness</b><span>S$38K</span></div><div class="bar"><i style="width:28%"></i></div></li></ul>
 <p class="lead">Most self-service businesses sink their money into large fit-outs, heavy machines and staff. Harmony Wellness designed those costs out, which is why owning one costs a fraction as much.</p>
 <p class="srcs" style="color:var(--ink-2)">Laundromat estimate: Bestar, Singapore laundry consultant, 2025. <span class="todo">Price check: S$28K live page / S$87.5K pitch PDF</span></p></div>
-<div class="turn-head rv" style="margin-top:64px"><h2>From Paying It Off to Paying You</h2><p>On projected owner earnings of S$2,100 to S$2,790 a month, your S$38,000 comes back in about 14 to 18 months. From then on, what the outlet earns is extra income alongside your salary, from a business that doesn't need you there.</p></div>
+<div class="turn-head rv" style="margin-top:64px"><h2>From Paying It Off to Paying You</h2><p>On projected owner earnings of S$2,100 to S$2,790 a month, <mark>your S$38,000 comes back in about 14 to 18 months</mark>. From then on, what the outlet earns is extra income alongside your salary, from a business that doesn't need you there.</p></div>
 <div class="chart rv"><svg viewBox="0 0 640 320" role="img" aria-label="Projected cumulative owner earnings over 24 months against the S$38,000 starting cost"><line class="gl" x1="50" x2="610" y1="280.0" y2="280.0"/><text class="ax" x="42" y="284.0" text-anchor="end">0K</text><line class="gl" x1="50" x2="610" y1="211.4" y2="211.4"/><text class="ax" x="42" y="215.4" text-anchor="end">20K</text><line class="gl" x1="50" x2="610" y1="142.9" y2="142.9"/><text class="ax" x="42" y="146.9" text-anchor="end">40K</text><line class="gl" x1="50" x2="610" y1="74.3" y2="74.3"/><text class="ax" x="42" y="78.3" text-anchor="end">60K</text><text class="ax" x="50.0" y="300" text-anchor="middle">0</text><text class="ax" x="190.0" y="300" text-anchor="middle">6</text><text class="ax" x="330.0" y="300" text-anchor="middle">12</text><text class="ax" x="470.0" y="300" text-anchor="middle">18</text><text class="ax" x="610.0" y="300" text-anchor="middle">24</text><text class="ax" x="610" y="316" text-anchor="end">MONTHS</text><polygon class="band" points="50,280 610.0,50.4 610.0,107.2"/><line class="lo" x1="50" y1="280" x2="610.0" y2="107.2"/><line class="hi" x1="50" y1="280" x2="610.0" y2="50.4"/><line class="tgt" x1="50" x2="610" y1="149.7" y2="149.7"/><text class="tgtl" x="56" y="141.7">Your S$38,000</text><circle class="dot" cx="367.8" cy="149.7" r="6"/><text class="lab" x="367.8" y="135.7" text-anchor="middle">~14 mo</text><circle class="dot" cx="472.2" cy="149.7" r="6"/><text class="lab" x="472.2" y="173.7" text-anchor="middle">~18 mo</text></svg><div class="legend"><span><i></i>Lower projection · S$2,100/mo</span><span><i class="d"></i>Higher projection · S$2,790/mo</span><span><i class="t"></i>Your S$38,000</span></div><p class="chart-fine">Projections only, not guaranteed. Actual results depend on location, occupancy, pricing and market conditions. <span class="todo">CHECK: figures from the earlier Harmony Wellness landing draft; Kenny to confirm, compliance to review</span></p></div>
 <div class="notice rv"><b>Please read:</b> these figures are a projection based on <span class="todo">River Valley data: Kenny to confirm</span>, not a promise. Owner earnings come from members' trials, packages and memberships, less the outlet's running costs, and they depend on how the outlet performs. Like any business, this carries risk. At your discovery session, Kenny and Summer go through the real figures behind this graph. <span class="todo">Compliance to approve</span></div>
 </div></section>
@@ -832,9 +848,9 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <section class="sec tint"><div class="wrap">
 <h2 class="rv">Experience It First, on Us. Talk Business After.</h2>
 <div class="beat" style="margin-top:32px">
-<div class="rv"><p class="lead">You wouldn't buy a café without tasting the coffee. So we won't talk business until you've tried Harmony Wellness yourself.</p>
+<div class="rv"><p class="lead">You wouldn't buy a café without tasting the coffee. <strong>So we won't talk business until you've tried Harmony Wellness yourself.</strong></p>
 <p class="lead">Your free discovery session starts with a session in a private room, on us. Only after you've felt what members pay for do we sit down and go through the numbers.</p></div>
-<figure class="photo rv"><img src="img/corridor.jpg" alt="Corridor to the private rooms at River Valley" loading="lazy"><figcaption>YOUR FREE SESSION STARTS HERE</figcaption></figure>
+<figure class="photo rv"><img src="img/corridor.jpg" alt="Corridor to the private rooms at River Valley" loading="lazy"><figcaption>Your free session starts here</figcaption></figure>
 </div>
 <ol class="steps rv">
 <li><span>01</span><b>Try a room, free, on us</b><p>A private session at 468 River Valley Road, so you feel exactly what members pay for. <span class="todo">value, e.g. worth S$100: confirm</span></p></li>
@@ -845,7 +861,7 @@ main .whys p,main .growth figcaption,main .future p{max-width:none}
 <!-- 17 WHY NOW  [Day 9 / 10]  objection: "I'll think about it later" -->
 <section class="sec dark"><div class="wrap split">
 <div class="rv"><h2>The People Who Get In Early Get the Best Seats</h2>
-<p class="lead">Fully automated wellness is a model most Singaporeans haven't seen yet. The Founding Partner tier has already sold out, and each outlet has a fixed number of rooms, so only a few owners can join each one.</p>
+<p class="lead">Fully automated wellness is a model most Singaporeans haven't seen yet. The Founding Partner tier has already sold out, and each outlet has a fixed number of rooms, so <strong>only a few owners can join each one</strong>.</p>
 <p class="lead">Once an outlet's places are taken, the next chance is a new location. <span class="todo">X places left at [outlet]</span></p>
 <p class="lead">Meanwhile, the business you keep postponing stays an idea. Every year you wait is another year without something of your own.</p>
 <p class="punch">A year from now, you could be watching bookings arrive from an outlet you own, or still be telling yourself "one day".</p></div>
